@@ -1,0 +1,53 @@
+.main{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+h1{
+    font-size: 28px;
+}
+
+h2{
+    font-size: 22px;
+}
+
+.figure1{
+    text-align: center;
+}
+
+.img1{
+    width: 540px;
+    height: 461px;
+}
+
+.contact-info{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    font-style: normal;
+}
+
+.contact-info .name{
+    flex: 1;
+    text-align: center;
+    min-width: 200px;
+}
+
+.university-info{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: -20px;
+    margin-bottom: -20px;
+}
+
+.expected{
+    font-weight: bold;
+}
+
+.degree-info{
+    display: flex;
+}
+
+.degree{
+    font-style: italic;
+}

@@ -10,6 +10,11 @@ h2{
     font-size: 22px;
 }
 
+h4{
+    font-weight: normal;
+    margin-bottom: -0.5vw;
+}
+
 .figure1{
     text-align: center;
 }
@@ -23,31 +28,27 @@ h2{
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
-    font-style: normal;
 }
 
-.contact-info .name{
+.contact-info p{
     flex: 1;
     text-align: center;
     min-width: 200px;
 }
 
-.university-info{
+.expected_date{
     display: flex;
-    justify-content: space-between;
     flex-wrap: wrap;
-    margin-top: -20px;
-    margin-bottom: -20px;
-}
-
-.expected{
+    float: right;
     font-weight: bold;
 }
 
-.degree-info{
-    display: flex;
+.cert_date{
+    display: block;
+    float: right;
+    font-weight: bold;
 }
 
-.degree{
-    font-style: italic;
+hr{
+    border-color: black;
 }

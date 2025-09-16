@@ -38,7 +38,6 @@ h4{
 
 .expected_date{
     display: flex;
-    justify-content: right;
     flex-wrap: wrap;
     float: right;
     font-weight: bold;

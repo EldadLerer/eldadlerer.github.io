@@ -1,120 +1,264 @@
-.main{
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+/* Professional Color Palette & Variables */
+:root {
+    --primary: #2563eb;       /* Modern Blue */
+    --primary-hover: #1d4ed8;
+    --bg-main: #f8fafc;       /* Soft Gray Background */
+    --bg-card: #ffffff;
+    --text-main: #1e293b;     /* Dark Slate */
+    --text-muted: #64748b;
+    --nav-width: 240px;
+    --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    --transition: all 0.3s ease;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    margin: 0;
+    line-height: 1.6;
+}
+
+.main {
     display: flex;
-    margin: 0 auto;
-    padding: 0;
+    min-height: 100vh;
 }
 
-h1{
-    font-size: 28px;
-}
-
-h2{
-    font-size: 22px;
-}
-
-h4{
-    font-weight: normal;
-    margin-bottom: -0.5vw;
-}
-
-.figure1{
-    text-align: center;
-}
-
-.img1{
-    max-width: 100%;
-    height: auto;
-
-    width: 540px;
-    height: 461px;
-}
-
-.contact-info{
-    display: flex;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-}
-
-.contact-info p{
-    flex: 1;
-    text-align: center;
-    min-width: 200px;
-}
-
-.expected_date{
-    display: flex;
-    flex-wrap: wrap;
-    font-weight: bold;
-}
-
-.cert_date{
-    display: block;
-    font-weight: bold;
-}
-
-hr{
-    border-color: black;
-    
-}
-
-.flex-item-line{
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    align-items: baseline;
-}
-
-.project_title{
-    font-weight: bold;
-}
-
-.project_date{
-    display: block;
-    flex-wrap: wrap;
-}
-
+/* --- Interactive Navigation Menu --- */
 nav {
-    width: 180px; 
-    padding: 20px 10px;
-    border-right: 1px solid black; 
-    flex-shrink: 0;
+    width: var(--nav-width);
+    background-color: #0f172a; /* Deep Navy */
+    color: white;
+    padding: 2rem 1rem;
     position: sticky;
     top: 0;
-    background-color: #f4f4f4; 
+    height: 100vh;
+    flex-shrink: 0;
+    box-shadow: 4px 0 10px rgba(0,0,0,0.1);
 }
 
-nav a{
+nav a {
     display: block;
-    padding: 5px 0;
+    padding: 0.75rem 1rem;
+    color: #cbd5e1;
     text-decoration: none;
-    color: #333;
+    border-radius: 8px;
+    margin-bottom: 0.5rem;
+    transition: var(--transition);
+    font-weight: 500;
 }
 
-nav a:hover{
-    background-color: rgba(0, 0, 0, 0.1);
+nav a:hover {
+    background-color: var(--primary);
+    color: white;
+    transform: translateX(5px);
 }
 
+/* --- Content Area --- */
 section {
     flex-grow: 1;
-    padding: 20px;
+    padding: 3rem;
+    max-width: 1000px;
+    margin: 0 auto;
 }
 
+h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #0f172a;
+    margin-bottom: 2rem;
+    border-bottom: 4px solid var(--primary);
+    display: inline-block;
+}
+
+h2, h3 {
+    color: #334155;
+    margin-top: 0;
+}
+
+/* --- Professional "Cards" --- */
+article {
+    background: var(--bg-card);
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    margin-bottom: 2rem;
+    border: 1px solid #e2e8f0;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background: #e2e8f0;
+    margin: 1.5rem 0;
+}
+
+/* --- Interactive Buttons & Links --- */
+.contact-info a {
+    display: inline-block;
+    padding: 0.5rem 1.25rem;
+    background-color: var(--primary);
+    color: white !important;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.contact-info a:hover {
+    background-color: var(--primary-hover);
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+}
+
+/* --- Project List Styling --- */
+.flex-item-line {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.project_title {
+    font-size: 1.25rem;
+    color: var(--primary);
+}
+
+.project_date, .expected_date {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    background: #f1f5f9;
+    padding: 2px 10px;
+    border-radius: 20px;
+}
+
+/* --- Images & Gallery --- */
+.img1, .img2 {
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+.img1:hover {
+    transform: scale(1.02);
+}
+
+/* --- Mobile Responsiveness --- */
 @media (max-width: 768px) {
     .main {
-        flex-direction: column; 
-        max-width: 100%;
+        flex-direction: column;
     }
 
     nav {
         width: 100%;
-        border-right: none;
-        border-bottom: 1px solid black;
+        height: auto;
         position: static;
-        padding: 10px;
-        
+        padding: 1rem;
         display: flex;
-        flex-direction: column;
-        background-color: #fff;
+        flex-direction: row;
+        justify-content: space-around;
     }
+
+    section {
+        padding: 1.5rem;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+}
+
+/* --- Global Responsive Images --- */
+img {
+    max-width: 100%; /* Ensures image never exceeds its container's width */
+    height: auto;    /* Maintains aspect ratio while resizing */
+    display: block;  /* Removes unwanted whitespace at the bottom */
+}
+
+/* --- Specific Project Image Handling --- */
+.img1, .img2 {
+    max-width: 100%; 
+    height: auto;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    margin: 0 auto; /* Centers the image if it's smaller than the container */
+}
+
+/* Optional: Scrollable container for complex diagrams */
+.figure_gallery {
+    overflow-x: auto; /* Adds a scrollbar ONLY to the image if it's too complex to shrink */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+/* --- Lightbox / Modal Styling --- */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1000;
+    padding-top: 50px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(15, 23, 42, 0.9); /* Dark navy overlay matching your theme */
+    backdrop-filter: blur(5px); /* Professional blur effect */
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 1000px;
+    border-radius: 12px;
+    animation-name: zoom;
+    animation-duration: 0.4s;
+}
+
+@keyframes zoom {
+    from {transform: scale(0.1)} 
+    to {transform: scale(1)}
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: #2563eb;
+}
+
+#caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: #ccc;
+    padding: 15px 0;
+}
+
+/* Style your clickable images to show they are interactive */
+.img1, .img2 {
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.img1:hover, .img2:hover {
+    opacity: 0.8;
 }

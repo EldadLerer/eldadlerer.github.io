@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="auvaultapp_stylesheet.css">
+        <link rel="stylesheet" href="stylesheet.css">
         <title>AuVault Android App</title>
     </head>
 
@@ -68,5 +68,37 @@
             </article>
         </section>
         </main>
+            <div id="imageModal" class="modal">
+                <span class="close">&times;</span>
+                <img class="modal-content" id="enlargedImg">
+                <div id="caption"></div>
+            </div>
     </body>
 </html>
+
+<script>
+    const modal = document.getElementById("imageModal");
+    const modalImg = document.getElementById("enlargedImg");
+    const captionText = document.getElementById("caption");
+
+    // Select all images with class img1 or img2
+    document.querySelectorAll('.img1, .img2').forEach(img => {
+        img.onclick = function() {
+            modal.style.display = "block";
+            modalImg.src = this.src;
+            captionText.innerHTML = this.alt; // Uses the 'alt' text as a caption
+        }
+    });
+
+    // Close the modal when clicking the 'x'
+    document.querySelector(".close").onclick = function() { 
+        modal.style.display = "none";
+    }
+
+    // Close the modal if the user clicks anywhere outside the image
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+</script>
